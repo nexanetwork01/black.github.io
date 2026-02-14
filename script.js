@@ -40,8 +40,33 @@ document.querySelectorAll('.cta-button').forEach(button => {
 });
 
 // Form submission handler (basic example)
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you! We will get back to you soon.');
-    // Add actual form handling (e.g., AJAX) here
+const form = document.querySelector('.contact-form');
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you! We will get back to you soon.');
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    document.querySelectorAll(".accordion-header").forEach(header => {
+        header.addEventListener("click", function() {
+
+            const content = this.nextElementSibling;
+            const icon = this.querySelector(".icon");
+
+            const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+
+            document.querySelectorAll(".accordion-content").forEach(c => c.style.maxHeight = null);
+            document.querySelectorAll(".icon").forEach(i => i.textContent = "+");
+
+            if (!isOpen) {
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.textContent = "−";
+            }
+        });
+    });
+
 });
+

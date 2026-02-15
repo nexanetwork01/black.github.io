@@ -459,11 +459,14 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid #222;
+
+    border-top: 1px solid rgba(255,255,255,0.05);
     margin-top: 40px;
     padding-top: 20px;
+
+    font-size: 0.8rem;
+    color: #777;
     text-align: center;
-    font-size: 0.9rem;
 }
 
 
@@ -474,25 +477,32 @@ body {
     gap: 15px;
 }
 
+/* Premium Social Icons */
+
 .social-icons a {
-    width: 40px;
-    height: 40px;
+
+    width: 42px;
+    height: 42px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #333;
+
     border-radius: 50%;
-    color: #ccc;
-    text-decoration: none;
-    transition: 0.3s ease;
+
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-    background: #fff;
-    color: #000;
-    transform: translateY(-3px);
-}
 
+    background: linear-gradient(45deg, #5d00ff, #9d00ff);
+    box-shadow: 0 5px 20px rgba(93,0,255,0.5);
+    transform: translateY(-4px);
+}
 
 
 /* Responsive Design (Mobile-First) */
@@ -556,49 +566,43 @@ body {
     }
 }
 
-/* ============================= */
-/* 📱 MOBILE FOOTER IMPROVEMENTS */
-/* ============================= */
+/* Mobile Footer Refinement */
 
 @media (max-width: 768px) {
 
-    /* Footer overall padding reduce + side spacing add */
     .footer {
-        padding: 40px 20px;   /* top-bottom 40px, left-right 20px */
-        text-align: center;   /* mobile me sab center aligned */
+        padding: 50px 20px 30px;
+        text-align: left;
     }
 
-    /* Columns ke beech thoda breathing space */
     .footer-container {
-        gap: 30px;   /* grid gap increase */
+        gap: 40px;
     }
 
-    /* Footer headings thoda compact */
-    .footer-col h3,
+    .footer-col h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
     .footer-col h4 {
-        margin-bottom: 10px;   /* heading ke niche space */
-        font-size: 1.1rem;     /* mobile friendly size */
+        font-size: 1rem;
+        margin-bottom: 12px;
+        letter-spacing: 0.5px;
     }
 
-    /* Paragraph aur list items readable size */
     .footer-col p,
     .footer-col li {
-        font-size: 0.9rem;     /* slightly smaller text */
-        line-height: 1.6;      /* better readability */
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: #aaa;
     }
 
-    /* List ke default padding remove */
-    .footer-col ul {
-        padding: 0;
-    }
-
-    /* Social icons ko center align karna */
     .social-icons {
-        justify-content: center;
+        justify-content: flex-start;
         margin-top: 15px;
+        gap: 12px;
     }
 }
-
 
 /* ================================== */
 /* 🌟 PREMIUM SOCIAL ICON DESIGN */
